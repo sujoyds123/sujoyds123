@@ -1,0 +1,36 @@
+How to Create Aws cross Account Role? Source Account - 687278383318
+===============================================
+Login Into Your Main Account >> Create A IAM USER >> Lets Say you give Permission {Administrator}
+Add-In-Line-Policy : Allow STS *
+----------------------------------
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "sts:*",
+            "Resource": "*"
+        }
+    ]
+}
+
+
+Suppose : IAM USER NAME : SoumenBiswas / Pass: C0llecti0n
+-----------------------------------
+Now Logout
+
+
+Go to Account 1 or Target Account Account ID: 922891759480
+===========================================
+Go to Iam - Create a role - Clik on Aws Another Account ( Give here Source Account ID)- 687278383318. - Give Permission - Like Administrator - Give A Proper-Role-Name - Save
+
+Now Copy Target Account Number and Role-Name
+
+Suppose Role Name : Access-Soumen-Gmail-Account
+Account ID : 922891759480
+
+Now Logout and LOgin in IAM WITH SoumenBiswas
+============================
+Now try to Login with Iam User. Click Switch Role >> Give The Account Id for Target >> Give The Role Name > Set Color > Save.
+
